@@ -1,21 +1,12 @@
 import { get } from "@ember/object";
-import { htmlSafe } from "@ember/template";
 import { defaultCategoryLinkRenderer } from "discourse/helpers/category-link";
 import categoryVariables from "discourse/helpers/category-variables";
 import { apiInitializer } from "discourse/lib/api";
 import { escapeExpression } from "discourse/lib/utilities";
 import Category from "discourse/models/category";
 import getURL from "discourse-common/lib/get-url";
-import { helperContext, registerRawHelper } from "discourse-common/lib/helpers";
+import { helperContext } from "discourse-common/lib/helpers";
 import { iconHTML } from "discourse-common/lib/icon-library";
-import I18n from "discourse-i18n";
-
-function buildTopicCount(count) {
-  return `<span class="topic-count" aria-label="${I18n.t(
-    "category_row.topic_count",
-    { count }
-  )}">&times; ${count}</span>`;
-}
 
 export default apiInitializer("1.8.0", (api) => {
   api.replaceCategoryLinkRenderer((category, opts) => {
