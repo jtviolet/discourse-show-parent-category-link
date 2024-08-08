@@ -1,5 +1,5 @@
 {
-  "name": "discourse-show-parent-category",
+  "name": "Show Parent Category Link",
   "component": true,
   "authors": "Arkshine",
   "about_url": "TODO: Put your theme's public repo or Meta topic URL here",
@@ -8,8 +8,6 @@
   "theme_version": "0.0.1",
   "minimum_discourse_version": null,
   "maximum_discourse_version": null,
-  "assets": {
-  },
-  "modifiers": {
-  }
+  "assets": {},
+  "modifiers": {}
 }
