@@ -9,6 +9,12 @@ import { helperContext } from "discourse-common/lib/helpers";
 import { iconHTML } from "discourse-common/lib/icon-library";
 
 export default apiInitializer("1.8.0", (api) => {
+  // 🚫 Skip execution if on the main category page
+  const router = api.container.lookup("service:router");
+  if (router.currentRouteName === "discovery.categories") {
+    return;
+  }
+
   api.replaceCategoryLinkRenderer((category, opts) => {
     const defaultHtml = defaultCategoryLinkRenderer(category, opts);
 
